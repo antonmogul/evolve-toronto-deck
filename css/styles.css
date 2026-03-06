@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: #1a1a2e;
     color: #eee;
     line-height: 1.6;
@@ -53,6 +53,7 @@ body {
 
 /* === Typography === */
 h1 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 0.4em;
@@ -60,6 +61,7 @@ h1 {
 }
 
 h2 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 2em;
     font-weight: 600;
     margin-bottom: 0.4em;
@@ -67,6 +69,7 @@ h2 {
 }
 
 h3 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 1.4em;
     font-weight: 600;
     margin-bottom: 0.3em;
@@ -113,6 +116,7 @@ li {
 }
 
 .slide-quote blockquote {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 2.6em;
     font-weight: 300;
     line-height: 1.4;
@@ -336,7 +340,7 @@ li {
     font-weight: 400;
     color: #ddd;
     margin-bottom: 0.5em;
-    font-family: 'Courier New', 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
 }
 
 .reveal-conclusion {
@@ -535,7 +539,7 @@ li {
 
 /* === Slide type: Just Files (Act 3) === */
 .file-tree {
-    font-family: 'Courier New', 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
     font-size: 1.2em;
     color: #aaa;
     line-height: 1.8;
@@ -600,7 +604,7 @@ li {
 }
 
 .command-category .cat-cmds {
-    font-family: 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 0.85em;
     color: #e94560;
 }
@@ -712,6 +716,256 @@ li {
     max-width: 700px;
     line-height: 1.6;
     margin-top: 1em;
+}
+
+/* ============================================= */
+/* === ANIMATIONS — within-slide motion       === */
+/* ============================================= */
+
+/* --- Keyframes --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typeReveal {
+    from { opacity: 0; transform: translateX(-20px); filter: blur(4px); }
+    to   { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(233, 69, 96, 0.2); }
+    50%      { box-shadow: 0 0 40px rgba(233, 69, 96, 0.5), 0 0 80px rgba(233, 69, 96, 0.15); }
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(233, 69, 96, 0.3); }
+    50%      { text-shadow: 0 0 30px rgba(233, 69, 96, 0.6), 0 0 60px rgba(233, 69, 96, 0.2); }
+}
+
+@keyframes strikethrough {
+    from { text-decoration-color: transparent; opacity: 0.3; }
+    to   { text-decoration-color: #e94560; opacity: 1; }
+}
+
+@keyframes borderGrowLeft {
+    from { border-left-color: transparent; }
+    to   { border-left-color: rgba(233, 69, 96, 0.5); }
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+@keyframes breathe {
+    0%, 100% { opacity: 0.7; }
+    50%      { opacity: 1; }
+}
+
+@keyframes ctaSlam {
+    0%   { opacity: 0; transform: scale(2.5); filter: blur(10px); }
+    60%  { opacity: 1; transform: scale(0.95); filter: blur(0); }
+    80%  { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* --- Quote slides: blockquote fade-in --- */
+.step.present .slide-quote blockquote,
+.step.present.slide-quote blockquote {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.step.present .slide-quote blockquote .emphasis,
+.step.present.slide-quote blockquote .emphasis {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* --- Content slides: heading + lead stagger --- */
+.step.present.slide-content h2,
+.step.present .slide-content h2 {
+    animation: slideDown 0.6s ease-out both;
+}
+
+.step.present.slide-content .lead,
+.step.present .slide-content .lead {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* --- Use-case lists: staggered item entrance --- */
+.step.present .use-case-item:nth-child(1) { animation: fadeInLeft 0.5s ease-out 0.15s both; }
+.step.present .use-case-item:nth-child(2) { animation: fadeInLeft 0.5s ease-out 0.3s both; }
+.step.present .use-case-item:nth-child(3) { animation: fadeInLeft 0.5s ease-out 0.45s both; }
+.step.present .use-case-item:nth-child(4) { animation: fadeInLeft 0.5s ease-out 0.6s both; }
+.step.present .use-case-item:nth-child(5) { animation: fadeInLeft 0.5s ease-out 0.75s both; }
+.step.present .use-case-item:nth-child(6) { animation: fadeInLeft 0.5s ease-out 0.9s both; }
+
+/* --- PARA grid: cells pop in --- */
+.step.present .para-cell:nth-child(1) { animation: fadeInScale 0.5s ease-out 0.1s both; }
+.step.present .para-cell:nth-child(2) { animation: fadeInScale 0.5s ease-out 0.25s both; }
+.step.present .para-cell:nth-child(3) { animation: fadeInScale 0.5s ease-out 0.4s both; }
+.step.present .para-cell:nth-child(4) { animation: fadeInScale 0.5s ease-out 0.55s both; }
+
+/* --- Tool graveyard: strikethrough cascade --- */
+.step.present .tool-item:nth-child(1)  { animation: strikethrough 0.4s ease-out 0.1s both; }
+.step.present .tool-item:nth-child(2)  { animation: strikethrough 0.4s ease-out 0.25s both; }
+.step.present .tool-item:nth-child(3)  { animation: strikethrough 0.4s ease-out 0.4s both; }
+.step.present .tool-item:nth-child(4)  { animation: strikethrough 0.4s ease-out 0.55s both; }
+.step.present .tool-item:nth-child(5)  { animation: strikethrough 0.4s ease-out 0.7s both; }
+.step.present .tool-item:nth-child(6)  { animation: strikethrough 0.4s ease-out 0.85s both; }
+.step.present .tool-item:nth-child(7)  { animation: strikethrough 0.4s ease-out 1.0s both; }
+.step.present .tool-item:nth-child(8)  { animation: strikethrough 0.4s ease-out 1.15s both; }
+.step.present .tool-item:nth-child(9)  { animation: strikethrough 0.4s ease-out 1.3s both; }
+.step.present .tool-item:nth-child(10) { animation: strikethrough 0.4s ease-out 1.45s both; }
+
+.step.present .stat {
+    animation: fadeInScale 0.6s ease-out both;
+}
+
+/* --- Meme slide: fun pop --- */
+.step.present.slide-meme blockquote {
+    animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* --- Graph: clusters fly in from different directions --- */
+.step.present .graph-cluster.saas       { animation: fadeInLeft 0.6s ease-out 0.2s both; }
+.step.present .graph-cluster.chat        { animation: fadeInUp 0.6s ease-out 0.5s both; }
+.step.present .graph-cluster.claude-code {
+    animation: fadeInRight 0.6s ease-out 0.8s both, pulseGlow 3s ease-in-out 1.4s infinite;
+}
+
+/* --- Reveal lines: sequential type-reveal --- */
+.step.present .reveal-line:nth-child(1) { animation: typeReveal 0.6s ease-out 0.2s both; }
+.step.present .reveal-line:nth-child(2) { animation: typeReveal 0.6s ease-out 0.7s both; }
+.step.present .reveal-line:nth-child(3) { animation: typeReveal 0.6s ease-out 1.2s both; }
+.step.present .reveal-line:nth-child(4) { animation: typeReveal 0.6s ease-out 1.7s both; }
+.step.present .reveal-conclusion        { animation: fadeInUp 0.8s ease-out 2.4s both, textGlow 2.5s ease-in-out 3.2s infinite; }
+
+/* --- Architecture: hub pulses, nodes stagger in --- */
+.step.present .arch-hub {
+    animation: fadeInScale 0.6s ease-out 0.1s both, pulseGlow 3s ease-in-out 0.7s infinite;
+}
+
+.step.present .arch-node:nth-child(1) { animation: fadeInUp 0.4s ease-out 0.3s both; }
+.step.present .arch-node:nth-child(2) { animation: fadeInUp 0.4s ease-out 0.45s both; }
+.step.present .arch-node:nth-child(3) { animation: fadeInUp 0.4s ease-out 0.6s both; }
+.step.present .arch-node:nth-child(4) { animation: fadeInUp 0.4s ease-out 0.75s both; }
+.step.present .arch-node:nth-child(5) { animation: fadeInUp 0.4s ease-out 0.9s both; }
+
+/* --- Interface cards: staggered scale-in --- */
+.step.present .interface-card:nth-child(1) { animation: fadeInScale 0.5s ease-out 0.15s both; }
+.step.present .interface-card:nth-child(2) { animation: fadeInScale 0.5s ease-out 0.3s both; }
+.step.present .interface-card:nth-child(3) { animation: fadeInScale 0.5s ease-out 0.45s both; }
+.step.present .interface-card:nth-child(4) { animation: fadeInScale 0.5s ease-out 0.6s both; }
+
+.step.present .interface-footer {
+    animation: fadeInUp 0.6s ease-out 0.8s both, textGlow 2.5s ease-in-out 1.4s infinite;
+}
+
+/* --- Layer rows: slide in with border grow --- */
+.step.present .layer-row:nth-child(1) { animation: fadeInLeft 0.5s ease-out 0.15s both, borderGrowLeft 0.3s ease-out 0.65s both; }
+.step.present .layer-row:nth-child(2) { animation: fadeInLeft 0.5s ease-out 0.3s both, borderGrowLeft 0.3s ease-out 0.8s both; }
+.step.present .layer-row:nth-child(3) { animation: fadeInLeft 0.5s ease-out 0.45s both, borderGrowLeft 0.3s ease-out 0.95s both; }
+.step.present .layer-row:nth-child(4) { animation: fadeInLeft 0.5s ease-out 0.6s both, borderGrowLeft 0.3s ease-out 1.1s both; }
+
+.step.present .layer-footer {
+    animation: fadeInUp 0.5s ease-out 0.9s both;
+}
+
+/* --- File tree: fade in with slight scale --- */
+.step.present .file-tree {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.step.present .benefit-item:nth-child(1) { animation: fadeInLeft 0.4s ease-out 0.5s both; }
+.step.present .benefit-item:nth-child(2) { animation: fadeInLeft 0.4s ease-out 0.65s both; }
+.step.present .benefit-item:nth-child(3) { animation: fadeInLeft 0.4s ease-out 0.8s both; }
+.step.present .benefit-item:nth-child(4) { animation: fadeInLeft 0.4s ease-out 0.95s both; }
+
+/* --- Command map: categories stagger from alternating sides --- */
+.step.present .command-category:nth-child(odd)  { animation: fadeInLeft 0.4s ease-out calc(0.1s + var(--i, 0) * 0.12s) both; }
+.step.present .command-category:nth-child(even)  { animation: fadeInRight 0.4s ease-out calc(0.16s + var(--i, 0) * 0.12s) both; }
+.step.present .command-category:nth-child(1) { --i: 0; }
+.step.present .command-category:nth-child(2) { --i: 1; }
+.step.present .command-category:nth-child(3) { --i: 2; }
+.step.present .command-category:nth-child(4) { --i: 3; }
+.step.present .command-category:nth-child(5) { --i: 4; }
+.step.present .command-category:nth-child(6) { --i: 5; }
+.step.present .command-category:nth-child(7) { --i: 6; }
+
+/* --- Iterate loop: nodes bounce in --- */
+.step.present .iterate-node:nth-child(1) { animation: fadeInScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; }
+.step.present .iterate-arrow:nth-child(2) { animation: fadeInLeft 0.3s ease-out 0.3s both; }
+.step.present .iterate-node:nth-child(3) { animation: fadeInScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both; }
+.step.present .iterate-arrow:nth-child(4) { animation: fadeInLeft 0.3s ease-out 0.6s both; }
+.step.present .iterate-node:nth-child(5) { animation: fadeInScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both; }
+.step.present .iterate-arrow:nth-child(6) { animation: fadeInLeft 0.3s ease-out 0.9s both; }
+.step.present .iterate-node:nth-child(7) { animation: fadeInScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.0s both; }
+
+/* --- Vision slides: title + quote animate --- */
+.step.present .vision-title {
+    animation: fadeInUp 0.7s ease-out 0.1s both;
+}
+
+.step.present .vision-quote {
+    animation: fadeInUp 0.6s ease-out 0.8s both, textGlow 2.5s ease-in-out 1.4s infinite;
+}
+
+/* --- CTA: dramatic staged reveal --- */
+.step.present .cta-line:nth-child(1) { animation: fadeInUp 0.7s ease-out 0.2s both; }
+.step.present .cta-line:nth-child(2) { animation: fadeInUp 0.7s ease-out 0.7s both; }
+.step.present .cta-line:nth-child(3) { animation: fadeInUp 0.7s ease-out 1.2s both; }
+
+.step.present .cta-action {
+    animation: ctaSlam 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.0s both, textGlow 2s ease-in-out 2.8s infinite;
+}
+
+.step.present .cta-qr {
+    animation: fadeInScale 0.5s ease-out 2.6s both;
+}
+
+.step.present .cta-footer {
+    animation: fadeInUp 0.6s ease-out 3.0s both;
+}
+
+/* --- Taglines always glow after appearing --- */
+.step.present .tagline {
+    animation: fadeInUp 0.6s ease-out 0.6s both, textGlow 2.5s ease-in-out 1.2s infinite;
+}
+
+/* --- Visual placeholders: gentle float --- */
+.step.present .visual-placeholder {
+    animation: fadeInUp 0.6s ease-out 0.5s both, floatSoft 4s ease-in-out 1.1s infinite;
+}
+
+/* --- Arch hub: continuous breathing glow --- */
+.step.present .arch-hub::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid rgba(233, 69, 96, 0.3);
+    animation: breathe 2s ease-in-out infinite;
 }
 
 /* === Speaker notes (hidden from presentation) === */
