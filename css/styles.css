@@ -1,0 +1,101 @@
+/* === Reset & Base === */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    line-height: 1.6;
+}
+
+/* === Fallback message (unsupported browsers) === */
+.fallback-message {
+    display: none;
+    font-size: 1.2em;
+    padding: 40px;
+    text-align: center;
+    color: #ccc;
+}
+
+.impress-not-supported .fallback-message {
+    display: block;
+}
+
+.impress-not-supported #impress {
+    display: none;
+}
+
+/* === Step (slide) base === */
+.step {
+    width: 1200px;
+    padding: 60px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: opacity 0.6s ease;
+}
+
+/* === Step state styling === */
+.impress-enabled .step.past {
+    opacity: 0.3;
+}
+
+.impress-enabled .step.future {
+    opacity: 0;
+}
+
+.impress-enabled .step.present {
+    opacity: 1;
+}
+
+/* === Typography === */
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 0.6em;
+    color: #ccc;
+}
+
+ul, ol {
+    font-size: 1.2em;
+    margin-left: 1.5em;
+    margin-bottom: 0.6em;
+    color: #ccc;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+/* === Utility === */
+.highlight {
+    color: #e94560;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.4em;
+    color: #aaa;
+}
