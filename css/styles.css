@@ -255,6 +255,121 @@ li {
     justify-content: center;
 }
 
+/* === Slide type: Graph (Act 2 capability plot) === */
+.slide-graph {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.graph-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.axis-label {
+    position: absolute;
+    font-size: 1em;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.axis-label.x-axis {
+    bottom: -35px;
+    right: 0;
+}
+
+.axis-label.y-axis {
+    top: -10px;
+    left: -10px;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+}
+
+.graph-cluster {
+    position: absolute;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.95em;
+    color: #999;
+}
+
+.graph-cluster.saas {
+    bottom: 10%;
+    left: 5%;
+}
+
+.graph-cluster.chat {
+    bottom: 40%;
+    left: 35%;
+    color: #bbb;
+}
+
+.graph-cluster.claude-code {
+    top: 8%;
+    right: 5%;
+    color: #fff;
+    background: rgba(233, 69, 96, 0.15);
+    border: 1px solid rgba(233, 69, 96, 0.4);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.2);
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+/* === Slide type: Reveal (Act 2 penny drop) === */
+.slide-reveal {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 600px;
+}
+
+.reveal-line {
+    font-size: 2em;
+    font-weight: 400;
+    color: #ddd;
+    margin-bottom: 0.5em;
+    font-family: 'Courier New', 'Fira Code', monospace;
+}
+
+.reveal-conclusion {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #e94560;
+    margin-top: 0.8em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.8em;
+}
+
+/* === Use case list (Act 2 slides 2 & 6) === */
+.use-case-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.use-case-item {
+    font-size: 1.4em;
+    color: #ccc;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tagline {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #e94560;
+    margin-top: 1em;
+    font-style: italic;
+}
+
 /* === Speaker notes (hidden from presentation) === */
 .notes {
     display: none;
