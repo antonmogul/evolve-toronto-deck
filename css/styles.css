@@ -640,6 +640,80 @@ li {
     color: #e94560;
 }
 
+/* === Slide type: Vision (Closing — what's next) === */
+.slide-vision {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.vision-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.6em;
+}
+
+.vision-quote {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e94560;
+    margin-top: 1.2em;
+    font-style: italic;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.8em;
+}
+
+/* === Slide type: CTA (Final slide) === */
+.slide-cta {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 700px;
+}
+
+.cta-lines {
+    margin-bottom: 1.5em;
+}
+
+.cta-line {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: 0.4em;
+    line-height: 1.5;
+}
+
+.cta-action {
+    font-size: 3.2em;
+    font-weight: 700;
+    color: #e94560;
+    margin: 0.5em 0;
+    letter-spacing: 0.02em;
+}
+
+.cta-qr {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 0.85em;
+    margin: 1em auto;
+}
+
+.cta-footer {
+    font-size: 1.1em;
+    color: #888;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-top: 1em;
+}
+
 /* === Speaker notes (hidden from presentation) === */
 .notes {
     display: none;
