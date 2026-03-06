@@ -99,3 +99,163 @@ li {
     font-size: 1.4em;
     color: #aaa;
 }
+
+/* === Slide type: Quote === */
+/* Full-screen centered quote — no card background */
+.slide-quote {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 600px;
+}
+
+.slide-quote blockquote {
+    font-size: 2.6em;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #fff;
+    max-width: 900px;
+}
+
+.slide-quote blockquote .emphasis {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-top: 0.3em;
+}
+
+/* === Slide type: Content === */
+/* Standard informational slide with card background */
+.slide-content {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.slide-content h2 {
+    color: #fff;
+    margin-bottom: 0.6em;
+}
+
+.slide-content .lead {
+    font-size: 1.5em;
+    color: #ddd;
+    margin-bottom: 0.3em;
+}
+
+.slide-content .lead em {
+    color: #e94560;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* === PARA Grid (slide 3) === */
+.para-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.para-cell {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+.para-cell .letter {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #e94560;
+    line-height: 1;
+}
+
+.para-cell .label {
+    font-size: 1.3em;
+    color: #ccc;
+    margin-top: 0.3em;
+}
+
+.para-cell .icon {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+    opacity: 0.7;
+}
+
+/* === Slide type: Graveyard (slide 4) === */
+.slide-graveyard {
+    background: rgba(255, 255, 255, 0.04);
+    text-align: center;
+}
+
+.slide-graveyard .stat {
+    font-size: 3.2em;
+    font-weight: 700;
+    color: #e94560;
+    margin-bottom: 0.1em;
+}
+
+.slide-graveyard .stat-sub {
+    font-size: 1.2em;
+    color: #888;
+    margin-bottom: 1.2em;
+}
+
+.tool-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tool-item {
+    font-size: 1.3em;
+    color: #666;
+    text-decoration: line-through;
+    text-decoration-color: #e94560;
+    transition: opacity 0.3s ease;
+}
+
+/* === Slide type: Meme (slide 5) === */
+.slide-meme {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 600px;
+}
+
+.slide-meme blockquote {
+    font-size: 3em;
+    font-weight: 300;
+    font-style: italic;
+    color: #fff;
+}
+
+/* === Visual placeholder === */
+/* Placeholder box for images/videos to be added later */
+.visual-placeholder {
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9em;
+    margin-top: 30px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === Speaker notes (hidden from presentation) === */
+.notes {
+    display: none;
+}
